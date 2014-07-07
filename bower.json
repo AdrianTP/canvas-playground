@@ -3,11 +3,13 @@
   "private": true,
   "version": "0.0.0",
   "dependencies": {
-    "EaselJS": "CreateJS/EaselJS",
-    "TweenJS": "CreateJS/TweenJS",
-    "PreloadJS": "CreateJS/PreloadJS",
-    "SoundJS": "CreateJS/SoundJS",
-    "Collision-Detection-for-EaselJS": "olsn/Collision-Detection-for-EaselJS"
+    "EaselJS": "CreateJS/EaselJS#f21d1f5cba2ed56196bfa1cd2d20044427da4180",
+    "TweenJS": "CreateJS/TweenJS#d74df450170f10913c69dfcc775af9ba97dccbd8",
+    "PreloadJS": "CreateJS/PreloadJS#9b08732dbf02e36cfebbbb965eae20e28c5ce0ff",
+    "SoundJS": "CreateJS/SoundJS#c796dae702a689a4282d27bfec35dff51468e034",
+    "Collision-Detection-for-EaselJS": "olsn/Collision-Detection-for-EaselJS#e026c57277768dbe1e427c862aee52815440e6d8",
+    "Ejecta": "phoboslab/Ejecta#5bb47404da6ba5be415f38c2da519a85d2e0f240",
+    "Ejecta-X": "Wizcorp/Ejecta-X#9b30c8d6b81f643337ea730793855621a11109d2"
   },
   "devDependencies": {}
 }
