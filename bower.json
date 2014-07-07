@@ -1,0 +1,13 @@
+{
+  "name": "canvas-playground",
+  "private": true,
+  "version": "0.0.0",
+  "dependencies": {
+    "EaselJS": "CreateJS/EaselJS",
+    "TweenJS": "CreateJS/TweenJS",
+    "PreloadJS": "CreateJS/PreloadJS",
+    "SoundJS": "CreateJS/SoundJS",
+    "Collision-Detection-for-EaselJS": "olsn/Collision-Detection-for-EaselJS"
+  },
+  "devDependencies": {}
+}
