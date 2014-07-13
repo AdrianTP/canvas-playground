@@ -11,7 +11,7 @@
     "KineticJS": "ericdrowell/KineticJS",
     "PaperJS": "paperjs/paper.js",
     "FabricJS": "kangax/fabric.js",
-    "ThreeJS": "mrdoob/three.js/",
+    "ThreeJS": "mrdoob/three.js",
     "PixiJS": "GoodBoyDigital/pixi.js",
     "SceneGraphJS": "GwennaelBuchet/SceneGraph.js",
     "ProcessingJS": "processing-js/processing-js",
