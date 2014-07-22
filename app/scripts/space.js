@@ -72,9 +72,9 @@
  * @returns object Vector
  */
 var Vector = Class.extend({
-	x: x,
-	y: y,
-	z: z
+    x: x,
+    y: y,
+    z: z
 });
 
 /**
@@ -85,23 +85,23 @@ var Vector = Class.extend({
  * @returns object Acceleration
  */
 var Acceleration = Class.extend({
-	x: x,
-	y: y,
-	z: z,
-	rx: rx,
-	ry: ry,
-	rz: rz
+    x: x,
+    y: y,
+    z: z,
+    rx: rx,
+    ry: ry,
+    rz: rz
 });
 
 /**
- * MinMax
+ * Range
  * Stores the minimum and maximum values along a single axis
  * 
- * @returns object MinMax
+ * @returns object Range
  */
-var MinMax = Class.extend({
-	pos: 0,
-	neg: 0
+var Range = Class.extend({
+    max: 0,
+    min: 0
 });
 
 /**
@@ -112,12 +112,12 @@ var MinMax = Class.extend({
  * @returns object Thrust
  */
 var Thrust = Class.extend({ // TODO: Determine whether massless values or not (should I use degrees/metres or Newton-metres/Joules?)
-	x: new MinMax(),  // metres/second
-	y: new MinMax(),  // metres/second
-	z: new MinMax(),  // metres/second
-	rx: new MinMax(), // degrees/second
-	ry: new MinMax(), // degrees/second
-	rz: new MinMax()  // degrees/second
+    x: new Range(),  // metres/second
+    y: new Range(),  // metres/second
+    z: new Range(),  // metres/second
+    rx: new Range(), // degrees/second
+    ry: new Range(), // degrees/second
+    rz: new Range()  // degrees/second
 });
 
 /**
@@ -129,23 +129,23 @@ var Thrust = Class.extend({ // TODO: Determine whether massless values or not (s
  * @returns object Thing
  */
 var Thing = Class.extend({
-	// Properties of Thing itself
-	name: name,
-	mass: 0,                          // +   mass of Thing in kilogrammes? tonnes? TODO: decide measurement
-	density: 1,                       // +   ratio of mass to empty space within volume? amount of mass per cubic metre? TODO: decide density units
-	volume: 1,                        // +   size of bounding box in cubic metres
-	dimensions: {                     // +   size of bounding box in metres
-		x: 0,
-		y: 0,
-		z: 0
-	},
-	terminalV: new Thrust(),          // +   maximum speed along any axis of motion
+    // Properties of Thing itself
+    name: name,
+    mass: 0,                          // +   mass of Thing in kilogrammes? tonnes? TODO: decide measurement
+    density: 1,                       // +   ratio of mass to empty space within volume? amount of mass per cubic metre? TODO: decide density units
+    volume: 1,                        // +   size of bounding box in cubic metres
+    dimensions: {                     // +   size of bounding box in metres
+        x: 0,
+        y: 0,
+        z: 0
+    },
+    terminalV: new Thrust(),          // +   maximum speed along any axis of motion
 
-	// Properties of Thing in relation to space
-	location: new Vector(0, 0, 0),    //     current location in space
-	orientation: new Vector(0, 0, 0), // +/- current direction facing (degrees) ([0, 0, 0] = facing positive Y and perpendicular to both X and Z)
-	velocity: new Vector(0, 0, 0),    // +/- current change in position (metres/second)
-	acceleration: new Acceleration()  // +/- current change in velocity or orientation 
+    // Properties of Thing in relation to space
+    location: new Vector(0, 0, 0),    //     current location in space
+    orientation: new Vector(0, 0, 0), // +/- current direction facing (degrees) ([0, 0, 0] = facing positive Y and perpendicular to both X and Z)
+    velocity: new Vector(0, 0, 0),    // +/- current change in position (metres/second)
+    acceleration: new Acceleration()  // +/- current change in velocity or orientation 
 });
 
 var Asteroid = new Thing("asteroid1");
@@ -160,16 +160,16 @@ var Asteroid = new Thing("asteroid1");
  * @returns Thing
  */
 var Ship = Thing.extend({
-	init: function() {
-		this._super();
-		// set ship properties here, such as mass and terminalV
-	},
-	thrust: new Thrust(),             // +   power output along any axis of motion
-	acceleration: new Thrust(),
-	accelerating: false,
-	turning: false,
-	firing: {
-		primary: false,
-		secondary: false
-	}
+    init: function() {
+        this._super();
+        // set ship properties here, such as mass and terminalV
+    },
+    thrust: new Thrust(),             // +   power output along any axis of motion
+    acceleration: new Thrust(),
+    accelerating: false,
+    turning: false,
+    firing: {
+        primary: false,
+        secondary: false
+    }
 });
