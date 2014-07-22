@@ -243,7 +243,7 @@ var Range = Class.extend({
  * @returns object Thrust
  */
 var Thrust = Class.extend({ // TODO: Determine whether massless values or not (should I use degrees/metres or Newton-metres/Joules?)
-    inti: function() {
+    init: function() {
         
     },
     x: new Range(),  // metres/second
