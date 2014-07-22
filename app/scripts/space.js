@@ -268,11 +268,7 @@ var Thing = Class.extend({
     mass: 0,                          // +   mass of Thing in kilogrammes? tonnes? TODO: decide measurement
     density: 1,                       // +   ratio of mass to empty space within volume? amount of mass per cubic metre? TODO: decide density units
     volume: 1,                        // +   size of bounding box in cubic metres
-    dimensions: {                     // +   size of bounding box in metres
-        x: 0,
-        y: 0,
-        z: 0
-    },
+    dimensions: new Vector(),         // +   size of bounding box in metres -- not strictly a Vector, but why not reuse code?
     terminalV: new Thrust(),          // +   maximum speed along any axis of motion
 
     // Properties of Thing in relation to space
