@@ -272,11 +272,33 @@ var Thing = Class.extend({
     terminalV: new Thrust(),          // +   maximum speed along any axis of motion
 
     // Properties of Thing in relation to space
-    location: new Vector(),    //     current location in space
-    orientation: new Vector(), // +/- current direction facing (degrees) ([0, 0, 0] = facing positive Y and perpendicular to both X and Z)
-    velocity: new Vector(),    // +/- current change in position (metres/second)
+    location: new Vector(),           //     current location in space
+    orientation: new Vector(),        // +/- current direction facing (degrees) ([0, 0, 0] = facing positive Y and perpendicular to both X and Z)
+    velocity: new Vector(),           // +/- current change in position (metres/second)
     acceleration: new Acceleration()  // +/- current change in velocity or orientation 
 });
+
+var Space = Class.extend({
+    dimensions: new Vector(),
+    objects: []
+});
+
+var Viewport = Class.extend({
+    dimensions: new Vector(),
+    center: new Vector(),
+    focus: 0
+});
+
+var Player = Class.extend({
+    ship: new Ship(),
+    viewport: new Viewport()
+});
+
+//  Space holds Things
+//  for each Player, a Viewport is created, 
+//      which links to their Ship in 
+//      Space.objects[] and adopts the Thing's 
+//      location as its center
 
 var Asteroid = new Thing("asteroid1");
 
