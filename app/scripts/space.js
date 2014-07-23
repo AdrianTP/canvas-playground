@@ -323,5 +323,19 @@ var Ship = Thing.extend({
     firing: {
         primary: false,
         secondary: false
+    },
+    weapons: {
+        primary: [],
+        secondary: []
     }
 });
+
+var Weapon = Class.extend({
+    ammoType: new Ammo()
+});
+
+var Ammo = Thing.extend({
+    lifetime: 10 // seconds? frames?
+});
+
+
